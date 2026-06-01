@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张宇 | 上海财经大学 经济学博士</title>
+  <meta name="description" content="张宇，上海财经大学商学院产业经济学经济学博士，研究领域为数字经济与智能经济。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111;
+      --bg: #ffffff;
+      --muted: #6b6b6b;
+      --faint: #9a9a9a;
+      --line: #e6e6e6;
+      --line-strong: #111111;
+      --hover: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans SC", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.85;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Noto Serif SC", "Noto Sans SC", serif;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    a:hover {
+      opacity: .55;
+    }
+
+    /* ============ 顶部导航 ============ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 36px;
+      height: 70px;
+    }
+
+    .brand {
+      font-family: "Noto Serif SC", serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .brand span {
+      color: var(--faint);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-left: 10px;
+      font-family: "Noto Sans SC";
+    }
+
+    nav {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      color: var(--muted);
+      padding: 8px 15px;
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      letter-spacing: .5px;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .nav-link:hover {
+      color: var(--ink);
+    }
+
+    .nav-link.active {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+      height: 2px;
+      background: var(--ink);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: var(--ink);
+    }
+
+    /* ============ 页面容器 ============ */
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 36px;
+    }
+
+    .page {
+      display: none;
+      animation: fade .45s ease;
+      padding: 64px 0 96px;
+      min-height: 60vh;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .page-title {
+      font-size: 15px;
+      letter-spacing: 4px;
+      color: var(--faint);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-family: "Noto Sans SC";
+      font-weight: 400;
+    }
+
+    .page-h {
+      font-size: 30px;
+      margin-bottom: 40px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ============ 首页 ============ */
+    .hero {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+      padding-top: 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-text .eyebrow {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--faint);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-text h1 {
+      font-size: 46px;
+      letter-spacing: 4px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero-text .role {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 18px;
+      max-width: 620px;
+    }
+
+    .hero-text strong {
+      font-weight: 600;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .hero-photo {
+      width: 230px;
+      height: 288px;
+      flex-shrink: 0;
+      border: 1px solid var(--line-strong);
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--faint);
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.7;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .interests {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .interests span {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 4px 0;
+    }
+
+    .interests span:not(:last-child)::after {
+      content: "／";
+      color: var(--line-strong);
+      margin: 0 12px;
+      opacity: .4;
+    }
+
+    .cta-row {
+      margin-top: 38px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 26px;
+      font-size: 14.5px;
+      letter-spacing: 1px;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      background: none;
+      font-family: inherit;
+      color: var(--ink);
+    }
+
+    .btn.solid {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn.solid:hover {
+      opacity: .78;
+    }
+
+    .btn:hover {
+      background: var(--hover);
+      opacity: 1;
+    }
+
+    .quick-edu {
+      margin-top: 56px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-edu .ql {
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--faint);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .edu-row {
+      display: flex;
+      gap: 24px;
+      padding: 10px 0;
+      font-size: 15px;
+    }
+
+    .edu-row .yr {
+      width: 150px;
+      flex-shrink: 0;
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .edu-row .d b {
+      font-weight: 600;
+    }
+
+    .edu-row .d span {
+      color: var(--muted);
+    }
+
+    /* ============ 论文 / 列表 ============ */
+    .group {
+      margin-bottom: 46px;
+    }
+
+    .group-h {
+      font-size: 18px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .group-h .en {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--faint);
+      text-transform: uppercase;
+      font-family: "Noto Sans SC";
+      font-weight: 400;
+    }
+
+    .group-rule {
+      height: 1px;
+      background: var(--line);
+      margin: 14px 0 18px;
+    }
+
+    ol.pub,
+    ul.pub {
+      list-style: none;
+    }
+
+    ol.pub {
+      counter-reset: p;
+    }
+
+    .pub li {
+      position: relative;
+      padding: 16px 0 16px 40px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .pub li:last-child {
+      border-bottom: none;
+    }
+
+    ol.pub li {
+      counter-increment: p;
+    }
+
+    ol.pub li::before {
+      content: counter(p, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 17px;
+      font-size: 13px;
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 1px;
+    }
+
+    ul.pub li {
+      padding-left: 24px;
+    }
+
+    ul.pub li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      color: var(--faint);
+    }
+
+    .me {
+      font-weight: 700;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .venue {
+      font-weight: 600;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 1px 8px;
+      margin-left: 7px;
+      letter-spacing: .5px;
+      white-space: nowrap;
+      display: inline-block;
+      line-height: 1.7;
+    }
+
+    .tag.k {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .st {
+      color: var(--faint);
+      font-size: 13.5px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 24px;
+      max-width: 680px;
+    }
+
+    /* 决策咨询 */
+    .policy-list {
+      list-style: none;
+    }
+
+    .policy-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .policy-list li:last-child {
+      border-bottom: none;
+    }
+
+    .policy-list .yr {
+      flex-shrink: 0;
+      width: 46px;
+      color: var(--faint);
+      font-size: 13.5px;
+      font-variant-numeric: tabular-nums;
+      padding-top: 1px;
+    }
+
+    .policy-list .lvl {
+      font-weight: 600;
+    }
+
+    .honor-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-top: 6px;
+    }
+
+    .honor-grid div {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    /* CV / 联系 */
+    .contact-wrap {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .contact-col {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .contact-col h3 {
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--faint);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 400;
+      font-family: "Noto Sans SC";
+    }
+
+    .contact-col .row {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15.5px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .contact-col .row span:first-child {
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--faint);
+      font-size: 12.5px;
+      letter-spacing: 1px;
+      padding: 28px 36px;
+    }
+
+    /* ============ 响应式 ============ */
+    @media(max-width:820px) {
+      .nav-inner {
+        padding: 0 22px;
+        height: 62px;
+      }
+
+      nav {
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--line);
+        display: none;
+        padding: 8px 0;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: 13px 22px;
+        border-radius: 0;
+      }
+
+      .nav-link.active::after {
+        display: none;
+      }
+
+      .nav-link.active {
+        background: var(--hover);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      main {
+        padding: 0 22px;
+      }
+
+      .page {
+        padding: 44px 0 70px;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      .hero-photo {
+        width: 170px;
+        height: 212px;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .page-h {
+        font-size: 25px;
+      }
+
+      .edu-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .edu-row .yr {
+        width: auto;
+      }
+
+      .honor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-wrap {
+        gap: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <div class="brand" data-go="home">张宇 <span>ZHANG YU</span></div>
+      <button class="menu-toggle" aria-label="菜单"
+        onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+      <nav>
+        <button class="nav-link active" data-go="home">首页</button>
+        <button class="nav-link" data-go="research">学术研究</button>
+        <button class="nav-link" data-go="policy">决策咨询</button>
+        <button class="nav-link" data-go="projects">课题与荣誉</button>
+        <button class="nav-link" data-go="cv">简历 · 联系</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== 首页 ===== -->
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="hero-text">
+          <div class="eyebrow">Industrial Economics · Ph.D. Candidate</div>
+          <h1>张　宇</h1>
+          <div class="role">上海财经大学商学院　产业经济学　经济学博士研究生</div>
+          <p>我的研究聚焦<strong>数字经济与智能经济</strong>，关注生成式人工智能、数据要素、企业创新与供应链风险等议题，并尝试将大语言模型等新方法引入实证经济学研究。</p>
+          <p>师从余典范教授，预计 2027 年毕业。研究成果发表于《管理世界》《中国工业经济》等期刊，并多次参与获中央及省部级批示采纳的决策咨询工作。</p>
+          <div class="interests">
+            <span>数字经济</span><span>智能经济</span><span>生成式人工智能</span><span>企业创新</span><span>供应链风险</span>
+          </div>
+          <div class="cta-row">
+            <button class="btn solid" data-go="research">查看研究成果</button>
+            <a class="btn" href="上海财经大学张宇-学术简历.pdf" target="_blank" rel="noopener">下载完整简历 PDF</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="photo.jpg" alt="张宇"
+            onerror="this.style.display='none';this.parentNode.insertAdjacentText('beforeend','照片占位\n（将 photo.jpg\n放入本文件夹）');">
+        </div>
+      </div>
+
+      <div class="quick-edu">
+        <div class="ql">教育经历 · Education</div>
+        <div class="edu-row">
+          <div class="yr">2022 — 2027</div>
+          <div class="d"><b>上海财经大学商学院</b>　经济学博士<br><span>产业经济学　·　导师：余典范 教授</span></div>
+        </div>
+        <div class="edu-row">
+          <div class="yr">2018 — 2022</div>
+          <div class="d"><b>上海财经大学商学院</b>　管理学学士<br><span>工商管理（商务分析方向）</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 研究成果 ===== -->
+    <section class="page" id="research">
+      <div class="page-title">Research</div>
+      <h2 class="page-h">学术研究</h2>
+
+      <div class="group">
+        <div class="group-h">已发表 / 录用论文 <span class="en">Publications</span></div>
+        <div class="group-rule"></div>
+        <ol class="pub">
+          <li>余典范，<span class="me">张宇</span>，贾咏琪．数据分析能力驱动的企业创新：基于招聘大数据的证据．<span class="venue">管理世界</span>，录用待刊．<span
+              class="tag k">顶级期刊</span><span class="tag">本人通讯</span></li>
+          <li>余典范，<span class="me">张宇</span>，宋晴．数字人力投入与企业价格加成——来自招聘大数据的证据．<span
+              class="venue">中国工业经济</span>，2025(07)：62–80．<span class="tag k">权威期刊</span><span
+              class="tag">人大复印资料转载</span><span class="tag">本人通讯</span></li>
+          <li><span class="me">张宇</span>，余典范，王超．基于大语言模型方法的供应链风险测度与结构分解．<span
+              class="venue">财贸研究</span>，2026，37(3)：27–39．<span class="tag">CSSCI</span><span class="tag">本人一作</span>
+          </li>
+          <li>余典范，李鑫，<span class="me">张宇</span>．企业 ESG 表现与供应链风险．<span class="venue">当代财经</span>，2024(12)：153–164．<span
+              class="tag">CSSCI</span></li>
+          <li>夏龙龙，余典范，<span class="me">张宇</span>．政府引导基金与企业创新边界拓展——基于有为政府和有效市场的协同视角．<span
+              class="venue">上海财经大学学报</span>，2025，27(06)：17–32．<span class="tag">CSSCI</span></li>
+        </ol>
+      </div>
+
+      <div class="group">
+        <div class="group-h">外审返修与在审论文 <span class="en">Under Review</span></div>
+        <div class="group-rule"></div>
+        <ol class="pub">
+          <li>余典范，<span class="me">张宇</span>，贾咏琪．生成式人工智能、人机协同与企业市场价值——来自 ChatGPT 上线的证据．<span class="venue">管理世界</span>
+            <span class="st">外审返修</span><span class="tag k">顶级期刊</span>
+          </li>
+          <li>余典范，顾莹莹，<span class="me">张宇</span>，孙睿乾．数据要素如何驱动企业脱虚向实——基于生成式人工智能分析的证据．<span
+              class="venue">数量经济技术经济研究</span> <span class="st">外审返修</span><span class="tag k">权威期刊</span></li>
+          <li><span class="me">Yu Zhang</span>, Xin Li, Dianfan Yu. Digital Human Capital and Business Diversification:
+            Evidence from Chinese Listed Firms. <span class="venue">Applied Economics</span> <span
+              class="st">一轮外审</span><span class="tag">SSCI Q2</span></li>
+          <li>Qing Song, Dianfan Yu, <span class="me">Yu Zhang</span>. Digital Knowledge and Market Power: A Firm-level
+            Analysis Based on Complexity Theory. <span class="venue">Structural Change and Economic Dynamics</span>
+            <span class="st">三轮外审</span><span class="tag">SSCI Q1</span>
+          </li>
+          <li>余典范，<span class="me">张宇</span>，贾咏琪．生成式人工智能与企业劳动收入份额．<span class="venue">经济学（季刊）</span> <span
+              class="st">初审</span><span class="tag k">权威期刊</span></li>
+          <li>余典范，<span class="me">张宇</span>，孙睿乾．规则的力量：立法如何重塑企业创新．<span class="venue">学术月刊</span> <span
+              class="st">初审</span><span class="tag k">权威期刊</span></li>
+          <li>余典范，孙睿乾，<span class="me">张宇</span>．外部制度冲击与中国企业创新韧性：来自美国产业立法的证据．<span class="venue">中国社会科学</span> <span
+              class="st">初审</span><span class="tag k">顶级期刊</span></li>
+          <li>干越倩，余典范，<span class="me">张宇</span>．人工智能赋能企业供应链风险治理——基于安全与效率协同的视角．<span class="venue">外国经济与管理</span> <span
+              class="st">初审</span></li>
+        </ol>
+      </div>
+
+      <div class="group">
+        <div class="group-h">工作论文 <span class="en">Working Papers</span></div>
+        <div class="group-rule"></div>
+        <ul class="pub">
+          <li>余典范，贾咏琪，<span class="me">张宇</span>．数据要素与企业业务边界拓展．<span class="st">拟投稿《经济研究》</span></li>
+          <li>余典范，顾莹莹，<span class="me">张宇</span>．生成式人工智能与企业业务边界．</li>
+        </ul>
+      </div>
+
+
+    </section>
+
+    <!-- ===== 决策咨询 ===== -->
+    <section class="page" id="policy">
+      <div class="page-title">Policy Consulting</div>
+      <h2 class="page-h">决策咨询</h2>
+      <p class="note">参与撰写的决策咨询报告多次获中央及省部级领导批示、有关部门采纳。涉密内容以 XXX 作脱敏处理。</p>
+      <ul class="policy-list">
+        <li><span class="yr">2024</span><span>我国 XXXXXXXX 可能被国外获取的主要风险点、危害及对策建议　<span
+              class="lvl">中共中央政治局常委批示</span></span></li>
+        <li><span class="yr">2025</span><span>全球产业政策新变化对上海重点产业的影响及应对研究　<span class="lvl">第十五届上海市决策咨询研究成果奖
+              二等奖</span>（导师外第一参与人）</span></li>
+        <li><span class="yr">2024</span><span>深入分析全球产业链供应链情况，更好发挥 XXX 作用的建议　<span class="lvl">国办采纳、教育部采纳</span></span>
+        </li>
+        <li><span class="yr">2024</span><span>外媒炒作"XXXX"的实质要害、影响及建议　<span class="lvl">省部级主要领导肯定性批示</span></span></li>
+        <li><span class="yr">2024</span><span>加强 XXXXX 产业链合作建议　<span class="lvl">中央国安委、市委国安办采纳</span></span></li>
+        <li><span class="yr">2025</span><span>特朗普加征关税背景下 XXXXXXXXXX 的变化、对华影响及对策建议　<span
+              class="lvl">中宣部综合采纳</span></span></li>
+        <li><span class="yr">2023</span><span>XXXXXXXXX 调查对我市的潜在影响及应对建议　<span class="lvl">副部级领导批示</span></span></li>
+        <li><span class="yr">2023</span><span>欧盟 XXXXXXX 对我国的具体影响及应对举措　<span class="lvl">副部级领导批示</span></span></li>
+        <li><span class="yr">2024</span><span>XXXXX 技术外流情况、主要风险隐患及对策建议　<span class="lvl">市教委综合采纳</span></span></li>
+        <li><span class="yr">2023</span><span>全国 XXXX 的突出表现、存在风险及相关建议　<span class="lvl">市教委综合采纳</span></span></li>
+        <li><span class="yr">2024</span><span>产业链 XXXXXX 替代产业链外迁面临的困难问题及应对建议　<span class="lvl">省市级内参</span></span></li>
+        <li><span class="yr">2025</span><span>当前 XXXX 竞争加剧，车企破产重组兼并引发的风险分析及应对建议　<span
+              class="lvl">市委国安办核心采纳</span></span></li>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 课题与荣誉 ===== -->
+    <section class="page" id="projects">
+      <div class="page-title">Projects & Honors</div>
+      <h2 class="page-h">荣誉与课题</h2>
+
+      <div class="group">
+        <div class="group-h">荣誉奖励 <span class="en">Honors</span></div>
+        <div class="group-rule"></div>
+        <div class="honor-grid">
+          <div>南京银行奖学金、博士研究生一等学业奖学金　<span class="st">2025</span></div>
+          <div>上海财经大学优秀学生　<span class="st">2025</span></div>
+          <div>中国数量经济学会年会优秀论文 <span class="st">2023</span></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="group-h">课题研究 <span class="en">Research Projects</span></div>
+        <div class="group-rule"></div>
+        <ul class="pub">
+          <li><span class="venue">主持</span>　上海财经大学研究生创新基金项目“中国上市公司供应链风险的测度与特征事实——基于大语言模型方法”</li>
+          <li>国家社会科学基金重大项目子课题“超大规模市场驱动现代化产业体系构建的理论逻辑与传导机制”（报告撰写）</li>
+          <li>上海市哲学社会科学规划专项课题“重点产业链安全风险评估和应对机制研究”（报告撰写）</li>
+          <li>上海市哲学社会科学规划课题“提升中国、上海重点产业链供应链韧性与安全水平研究”（报告撰写）</li>
+          <li>上海市经信委重大招标课题“关于提升本市总部型企业制造业板块能级研究”（报告撰写）</li>
+          <li>上海市人民代表大会课题“关于推进新型工业化、提升产业国际竞争力的法制应对研究”（报告撰写）</li>
+          <li>上海市教育委员会课题“上海加快供应链数字化转型研究”等多项（报告撰写）</li>
+          <li>支付宝（杭州）信息技术有限公司委托课题“更好发挥我国数字经济产业政策效应的对策研究”（报告撰写）</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 简历 · 联系 ===== -->
+    <section class="page" id="cv">
+      <div class="page-title">CV & Contact</div>
+      <h2 class="page-h">简历 · 联系</h2>
+      <div class="contact-wrap">
+        <div class="contact-col">
+          <h3>完整简历</h3>
+          <p class="note">包含全部论文、决策咨询、课题与荣誉的完整列表。</p>
+          <a class="btn solid" href="上海财经大学张宇-学术简历.pdf" target="_blank" rel="noopener">下载学术简历 PDF</a>
+        </div>
+        <div class="contact-col">
+          <h3>联系方式</h3>
+          <div class="row"><span>邮箱</span><a href="mailto:zhangyu200003@outlook.com">zhangyu200003@outlook.com</a></div>
+          <div class="row"><span>电话</span><a href="tel:15645647347">156 4564 7347</a></div>
+          <div class="row"><span>单位</span><span>上海财经大学商学院</span></div>
+          <div class="row"><span>研究领域</span><span>数字经济与智能经济</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 张宇 · 上海财经大学商学院　|　数字经济与智能经济</footer>
+
+  <script>
+    const links = document.querySelectorAll('[data-go]');
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function go(id) {
+      pages.forEach(p => p.classList.toggle('active', p.id === id));
+      navLinks.forEach(n => n.classList.toggle('active', n.dataset.go === id));
+      const navEl = document.querySelector('nav');
+      if (navEl) navEl.classList.remove('open');
+      window.scrollTo(0, 0);
+      if (history.replaceState) history.replaceState(null, '', '#' + id);
+    }
+    links.forEach(l => l.addEventListener('click', () => go(l.dataset.go)));
+    const init = location.hash.replace('#', '');
+    if (init && document.getElementById(init)) go(init);
+  </script>
+</body>
+
+</html>
