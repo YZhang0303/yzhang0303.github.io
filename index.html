@@ -455,6 +455,56 @@
       font-size: 13.5px;
     }
 
+    /* 折叠摘要 */
+    .abs {
+      margin-top: 10px;
+    }
+
+    .abs summary {
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      cursor: pointer;
+      font-size: 12.5px;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      user-select: none;
+    }
+
+    .abs summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .abs summary::before {
+      content: "＋";
+      color: var(--faint);
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .abs[open] summary::before {
+      content: "－";
+    }
+
+    .abs summary:hover {
+      color: var(--ink);
+    }
+
+    .abs-body {
+      margin-top: 9px;
+      padding: 2px 0 2px 16px;
+      border-left: 2px solid var(--line);
+      max-width: 680px;
+      font-size: 14px;
+      line-height: 1.85;
+      color: #444;
+      text-align: justify;
+      text-justify: inter-character;
+      animation: fade .3s ease;
+    }
+
     .note {
       color: var(--muted);
       font-size: 14px;
@@ -701,17 +751,43 @@
         <div class="group-rule"></div>
         <ol class="pub">
           <li>余典范，<span class="me">张宇</span>，贾咏琪．数据分析能力驱动的企业创新：基于招聘大数据的证据．<span class="venue">管理世界</span>，录用待刊．<span
-              class="tag k">顶级期刊</span><span class="tag">本人通讯</span></li>
+              class="tag k">顶级期刊</span><span class="tag">本人通讯</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文利用大规模企业招聘数据构建企业数据分析能力指标，实证检验数据分析能力对企业创新的驱动效应及其作用机制，并考察该效应在不同企业与行业间的异质性表现。</p>
+            </details>
+          </li>
           <li>余典范，<span class="me">张宇</span>，宋晴．数字人力投入与企业价格加成——来自招聘大数据的证据．<span
               class="venue">中国工业经济</span>，2025(07)：62–80．<span class="tag k">权威期刊</span><span
-              class="tag">人大复印资料转载</span><span class="tag">本人通讯</span></li>
+              class="tag">人大复印资料转载</span><span class="tag">本人通讯</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">
+                在促进数字经济发展过程中,以数字人力投入驱动数字化转型是企业竞争优势的重要来源。本文基于近7000万条招聘大数据,使用大语言模型文本分析方法,科学、准确地测度了上市公司年度层级的数字人力投入。在此基础上,将数字人力投入纳入异质性企业模型,通过理论分析和实证检验发现,数字人力投入能够提升企业价格加成,产品质量改善和生产效率提升是其重要影响渠道。异质性分析发现,数字人力投入的价格加成提升效应在劳动力保障程度高、产业数字化领域、研发密集度低和企业规模较大的样本中表现得更为明显,这意味着规范的劳动保障机制、丰富的实数融合场景、较低的技术应用门槛,以及良好的企业内部资源协同能更好地发挥数字人才效应。进一步分析表明,与外延边际、单一型数字人力投入相比,对数字人才进行追加招聘、招聘兼具数字职能与非数字职能的复合型数字人才,更能显著提升价格加成。本文扩展了数字化转型的研究视角,为数字人才的经济影响提供了理论参考,对数字人才培养和企业数字化转型路径选择具有一定的启示作用。
+              </p>
+            </details>
+          </li>
           <li><span class="me">张宇</span>，余典范，王超．基于大语言模型方法的供应链风险测度与结构分解．<span
               class="venue">财贸研究</span>，2026，37(3)：27–39．<span class="tag">CSSCI</span><span class="tag">本人一作</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文引入大语言模型方法对中国上市公司供应链风险进行文本测度与结构分解，构建供应链风险的特征事实，刻画其分布特征与时空演变规律。</p>
+            </details>
           </li>
           <li>余典范，李鑫，<span class="me">张宇</span>．企业 ESG 表现与供应链风险．<span class="venue">当代财经</span>，2024(12)：153–164．<span
-              class="tag">CSSCI</span></li>
+              class="tag">CSSCI</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文考察企业 ESG 表现对供应链风险的影响，分析 ESG 通过提升信息披露质量与改善利益相关者治理降低供应链风险的作用路径。</p>
+            </details>
+          </li>
           <li>夏龙龙，余典范，<span class="me">张宇</span>．政府引导基金与企业创新边界拓展——基于有为政府和有效市场的协同视角．<span
-              class="venue">上海财经大学学报</span>，2025，27(06)：17–32．<span class="tag">CSSCI</span></li>
+              class="venue">上海财经大学学报</span>，2025，27(06)：17–32．<span class="tag">CSSCI</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文从"有为政府"与"有效市场"协同的视角，研究政府引导基金对企业创新边界拓展的影响及其作用机制。</p>
+            </details>
+          </li>
         </ol>
       </div>
 
@@ -721,24 +797,64 @@
         <ol class="pub">
           <li>余典范，<span class="me">张宇</span>，贾咏琪．生成式人工智能、人机协同与企业市场价值——来自 ChatGPT 上线的证据．<span class="venue">管理世界</span>
             <span class="st">外审返修</span><span class="tag k">顶级期刊</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文以 ChatGPT 上线作为外生冲击，考察生成式人工智能及人机协同对企业市场价值的影响及其内在机制。</p>
+            </details>
           </li>
           <li>余典范，顾莹莹，<span class="me">张宇</span>，孙睿乾．数据要素如何驱动企业脱虚向实——基于生成式人工智能分析的证据．<span
-              class="venue">数量经济技术经济研究</span> <span class="st">外审返修</span><span class="tag k">权威期刊</span></li>
+              class="venue">数量经济技术经济研究</span> <span class="st">外审返修</span><span class="tag k">权威期刊</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文借助生成式人工智能分析方法，研究数据要素驱动企业"脱虚向实"的作用效果与传导机制。</p>
+            </details>
+          </li>
           <li><span class="me">Yu Zhang</span>, Xin Li, Dianfan Yu. Digital Human Capital and Business Diversification:
             Evidence from Chinese Listed Firms. <span class="venue">Applied Economics</span> <span
-              class="st">一轮外审</span><span class="tag">SSCI Q2</span></li>
+              class="st">一轮外审</span><span class="tag">SSCI Q2</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">This paper investigates how digital human capital shapes firms' business
+                diversification, drawing on evidence from Chinese listed firms.</p>
+            </details>
+          </li>
           <li>Qing Song, Dianfan Yu, <span class="me">Yu Zhang</span>. Digital Knowledge and Market Power: A Firm-level
             Analysis Based on Complexity Theory. <span class="venue">Structural Change and Economic Dynamics</span>
             <span class="st">三轮外审</span><span class="tag">SSCI Q1</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">Grounded in complexity theory, this paper provides a firm-level analysis of the
+                relationship between firms' digital knowledge and their market power.</p>
+            </details>
           </li>
           <li>余典范，<span class="me">张宇</span>，贾咏琪．生成式人工智能与企业劳动收入份额．<span class="venue">经济学（季刊）</span> <span
-              class="st">初审</span><span class="tag k">权威期刊</span></li>
+              class="st">初审</span><span class="tag k">权威期刊</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文研究生成式人工智能对企业劳动收入份额的影响及其作用机制。</p>
+            </details>
+          </li>
           <li>余典范，<span class="me">张宇</span>，孙睿乾．规则的力量：立法如何重塑企业创新．<span class="venue">学术月刊</span> <span
-              class="st">初审</span><span class="tag k">权威期刊</span></li>
+              class="st">初审</span><span class="tag k">权威期刊</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文从制度与立法的视角，考察法律规则如何重塑企业的创新行为与创新方向。</p>
+            </details>
+          </li>
           <li>余典范，孙睿乾，<span class="me">张宇</span>．外部制度冲击与中国企业创新韧性：来自美国产业立法的证据．<span class="venue">中国社会科学</span> <span
-              class="st">初审</span><span class="tag k">顶级期刊</span></li>
+              class="st">初审</span><span class="tag k">顶级期刊</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文以美国产业立法作为外部制度冲击，研究其对中国企业创新韧性的影响及应对机制。</p>
+            </details>
+          </li>
           <li>干越倩，余典范，<span class="me">张宇</span>．人工智能赋能企业供应链风险治理——基于安全与效率协同的视角．<span class="venue">外国经济与管理</span> <span
-              class="st">初审</span></li>
+              class="st">初审</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文从安全与效率协同的视角，探讨人工智能在企业供应链风险治理中的赋能作用与实现路径。</p>
+            </details>
+          </li>
         </ol>
       </div>
 
@@ -746,8 +862,18 @@
         <div class="group-h">工作论文 <span class="en">Working Papers</span></div>
         <div class="group-rule"></div>
         <ul class="pub">
-          <li>余典范，贾咏琪，<span class="me">张宇</span>．数据要素与企业业务边界拓展．<span class="st">拟投稿《经济研究》</span></li>
-          <li>余典范，顾莹莹，<span class="me">张宇</span>．生成式人工智能与企业业务边界．</li>
+          <li>余典范，贾咏琪，<span class="me">张宇</span>．数据要素与企业业务边界拓展．<span class="st">拟投稿《经济研究》</span>
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文研究数据要素对企业业务边界拓展的影响及其作用机制。（工作论文，摘要待完善）</p>
+            </details>
+          </li>
+          <li>余典范，顾莹莹，<span class="me">张宇</span>．生成式人工智能与企业业务边界．
+            <details class="abs">
+              <summary>摘要</summary>
+              <p class="abs-body">本文探讨生成式人工智能对企业业务边界的影响。（工作论文，摘要待完善）</p>
+            </details>
+          </li>
         </ul>
       </div>
 
